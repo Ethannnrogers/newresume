@@ -306,7 +306,7 @@
                 Resume & cover letter, perfect for recent graduates and those new to the workforce.
               </p>
               <span class="price"><sup>$</sup>99</span>
-              <p class="mb-0"><a id="checkout-button-sku_GRmlmj97wDdv2U" role="link" style="color:white;" class="btn btn-primary btn-shadow-blue">Get started</a></p>
+              <!-- <p class="mb-0"><a id="checkout-button-sku_GRmlmj97wDdv2U" role="link" style="color:white;" class="btn btn-primary btn-shadow-blue">Get started</a></p> -->
               <hr>
               <p class="blue-text-p text-left">Package includes:</p>
               <div class="row">
@@ -357,7 +357,7 @@
               <p>5 - 15 yrs Experience</p>
               <p class="pb_font-15">Resume & cover letter to take you from mid-career professional to a high level position.</p>
               <span class="price"><sup>$</sup>139</span>
-              <p class="mb-0"><a href="https://trolley.link/p/GM5ZV1" data-tpk="GM5ZV1" role="button" class="btn btn-primary btn-shadow-blue">Get started</a></p>
+              <p class="mb-0"><a style="color:white;" id="checkout-button-sku_GRza0BKMFL5IPM" data-tpk="GM5ZV1" role="link" class="btn btn-primary btn-shadow-blue">Get started</a></p>
               <hr>
               <p class="blue-text-p text-left">Package includes:</p>
               <div class="row">
@@ -578,27 +578,41 @@
       </div>
     </footer>
 
-    <!-- Load Stripe.js on your website. -->
+    <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+id="checkout-button-sku_GS00ALodLdQUpp"
+role="link"
+>
+Checkout
+</button>
+
+<div id="error-message"></div>
+
+
+<!-- Load Stripe.js on your website. -->
 <script src="https://js.stripe.com/v3"></script>
+
+
 
 <script>
 (function() {
-  var stripe = Stripe('pk_test_3LJkT9IkPOlMNbaaWepelS7D00fqIViGLC');
+  var stripe = Stripe('pk_live_ALkyYKCm6t6wmhOcncnDdmxJ00hzE5A4jO');
 
-  var checkoutButton = document.getElementById('checkout-button-sku_GRmlmj97wDdv2U');
+  var checkoutButton = document.getElementById('checkout-button-sku_GS00ALodLdQUpp');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{sku: 'sku_GRmlmj97wDdv2U', quantity: 1}],
+      items: [{sku: 'sku_GS00ALodLdQUpp', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://your-website.com/success',
-      cancelUrl: 'https://your-website.com/canceled',
+      successUrl: window.location.protocol + 'https://yournextresume.com/success',
+      cancelUrl: window.location.protocol + 'https://yournextresume.com/cancel',
     })
     .then(function (result) {
       if (result.error) {
