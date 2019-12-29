@@ -409,7 +409,7 @@
               <p>15 yrs+ Experience</p>
               <p class="pb_font-15">Resume & cover letter showing your successes and competencies to land your next role.</p>
               <span class="price"><sup>$</sup>179</span>
-              <p class="mb-0"><a href="#" role="button" class="btn btn-primary btn-shadow-blue">Get started</a></p>
+              <p class="mb-0"><a id="checkout-button-sku_GS1TLn7hYqA6X8" style="color:white;" role="link" class="btn btn-primary btn-shadow-blue">Get started</a></p>
               <hr>
               <p class="blue-text-p text-left">Package includes:</p>
               <div class="row">
@@ -649,6 +649,37 @@
   })();
   </script>
 
+  <!-- Button 3 - Advanced Level --> 
+  <script>
+    (function() {
+      var stripe = Stripe('pk_live_ALkyYKCm6t6wmhOcncnDdmxJ00hzE5A4jO');
+    
+      var checkoutButton = document.getElementById('checkout-button-sku_GS1TLn7hYqA6X8');
+      checkoutButton.addEventListener('click', function () {
+        // When the customer clicks on the button, redirect
+        // them to Checkout.
+        stripe.redirectToCheckout({
+          items: [{sku: 'sku_GS1TLn7hYqA6X8', quantity: 1}],
+    
+          // Do not rely on the redirect to the successUrl for fulfilling
+          // purchases, customers may not always reach the success_url after
+          // a successful payment.
+          // Instead use one of the strategies described in
+          // https://stripe.com/docs/payments/checkout/fulfillment
+          successUrl: window.location.protocol + '//yournextresume.com/success',
+          cancelUrl: window.location.protocol + '//yournextresume.com/canceled',
+        })
+        .then(function (result) {
+          if (result.error) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer.
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+          }
+        });
+      });
+    })();
+    </script>
 
     <!-- loader -->
     <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1d82ff"/></svg></div>
