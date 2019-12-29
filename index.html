@@ -589,13 +589,11 @@ Checkout
 
 <div id="error-message"></div>
 
-
 <!-- Load Stripe.js on your website. -->
 <script src="https://js.stripe.com/v3"></script>
 
-
-
 <script>
+  console.log(window.location.protocol + "this");
 (function() {
   var stripe = Stripe('pk_live_ALkyYKCm6t6wmhOcncnDdmxJ00hzE5A4jO');
 
@@ -611,8 +609,8 @@ Checkout
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: window.location.protocol + 'https://yournextresume.com/success',
-      cancelUrl: window.location.protocol + 'https://yournextresume.com/cancel',
+      successUrl: window.location.protocol + '/success',
+      cancelUrl: window.location.protocol + '/canceled',
     })
     .then(function (result) {
       if (result.error) {
