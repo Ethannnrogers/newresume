@@ -172,7 +172,7 @@ input::placeholder {
 }
 
 .blue-check-2 {
-    height: 18px;
+    height: 18px!important;
     width: auto;
     margin-left: 40px;
 }
