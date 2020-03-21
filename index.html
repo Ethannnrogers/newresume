@@ -69,6 +69,7 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/ace96f8c0b67455eaa0161df1a387768/pixel?tag=ViewContent&noscript=1"/></noscript>
   <!-- End of Quora Pixel Code -->
+  <script>qp('track', 'Purchase');</script>
 	</head>
 	<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
 
@@ -344,7 +345,11 @@
               </p>
               <span class="price"><sup>$</sup>99</span>
               <p class="mb-0"><a href="./entry-level-checkout" role="link" style="color:white;" class="btn btn-primary btn-shadow-blue">Get started</a></p>
-             
+              <script type="text/javascript">
+                $('#addToCartButton').click(function() {
+                qp('track', 'Purchase'); // Call this function when inline action happens);
+                });
+                </script>
               <!-- <p class="mb-0"><a id="checkout-button-sku_GS00ALodLdQUpp" role="link" style="color:white;" class="btn btn-primary btn-shadow-blue">Get started</a></p> -->
               <div id="error-message"></div>
               <hr>
@@ -398,6 +403,12 @@
               <p class="pb_font-15">Resume & cover letter to take you from mid-career professional to a high level position.</p>
               <span class="price"><sup>$</sup>139</span>
               <p class="mb-0"><a style="color:white;" id="checkout-button-sku_GS1BGX7N9CGL55"  role="link" class="btn btn-primary btn-shadow-blue">Get started</a></p>
+                <!-- Add event to the button's click handler -->
+                <script type="text/javascript">
+                $('#addToCartButton').click(function() {
+                qp('track', 'Purchase'); // Call this function when inline action happens);
+                });
+                </script>
               <hr>
               <p class="blue-text-p text-left">Package includes:</p>
               <div class="row">
@@ -449,6 +460,11 @@
               <p class="pb_font-15">Resume & cover letter showing your successes and competencies to land your next role.</p>
               <span class="price"><sup>$</sup>179</span>
               <p class="mb-0"><a id="checkout-button-sku_GS1TLn7hYqA6X8" style="color:white;" role="link" class="btn btn-primary btn-shadow-blue">Get started</a></p>
+              <script type="text/javascript">
+                $('#addToCartButton').click(function() {
+                qp('track', 'Purchase'); // Call this function when inline action happens);
+                });
+                </script>
               <hr>
               <p class="blue-text-p text-left">Package includes:</p>
               <div class="row">
