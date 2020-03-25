@@ -584,29 +584,29 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5">
-             <form action="#" class="bg-white rounded pb_form_v1">
+             <form action="https://formspree.io/xwkqwqdb" enctype="multipart/form-data" method="POST" class="bg-white rounded pb_form_v1">
               <h2 class="mb-4 mt-0 text-center">Free Resume Audit</h2>
               <div class="form-group">
-                <input type="text" class="form-control py-3 reverse" placeholder="First name">
+                <input type="text" class="form-control py-3 reverse" name="first-name" placeholder="First name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control py-3 reverse" placeholder="Email">
+                <input type="email" class="form-control py-3 reverse" name="email" placeholder="Email">
               </div>
               <div class="form-group">
                 <div class="pb_select-wrap">
-                  <select class="form-control pb_height-50 reverse">
-                    <option value="" selected>Career Level</option>
-                    <option value="">Under 5 yrs Experience</option>
-                    <option value="">5 - 15 yrs Experience</option>
-                    <option value="">15 yrs+ Experience</option>
+                  <select name="career-type" class="form-control pb_height-50 reverse">
+                    <option value="Entry-Level">Under 5 yrs Experience</option>
+                    <option value="Mid-Level">5 - 15 yrs Experience</option>
+                    <option value="Advanced-Level">15 yrs+ Experience</option>
                   </select>
                 </div>
               </div>
               <div class="form-group">
-                <input id="file-upload" type="file" name="attachment" accept=".png, .jpeg, .jpg, .doc, .pdf">
+                <input id="file-upload" type="file" name="attachment" accept="image/png, image/jpeg, image/jpg, image/doc, image/pdf">
               </div>
               <div class="form-group">
                 <input id="submit-resume-btn" type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Audit My Resume">
+                <input type="hidden" name="_next" value="https://yournextresume.com"/>
               </div>
             </form>
           </div>
